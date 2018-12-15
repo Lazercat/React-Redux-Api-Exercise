@@ -11,9 +11,11 @@ import { fetchMemes } from './actions';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 store.subscribe( () => console.log('store', store.getState()) );
-store.dispatch( fetchMemes() ); 
+store.dispatch(fetchMemes()); 
 
 ReactDOM.render( 
     <Provider store={store}>
         <App />
-    </Provider>, document.getElementById('root'));
+    </Provider>, 
+    document.getElementById('root')
+);
